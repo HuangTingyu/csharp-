@@ -1,0 +1,16 @@
+D:\00工作笔记\csharp_note\hello\Hello5\Hello5\bin\Debug\net5.0\Hello5.exe
+D:\00工作笔记\csharp_note\hello\Hello5\Hello5\bin\Debug\net5.0\Hello5.deps.json
+D:\00工作笔记\csharp_note\hello\Hello5\Hello5\bin\Debug\net5.0\Hello5.runtimeconfig.json
+D:\00工作笔记\csharp_note\hello\Hello5\Hello5\bin\Debug\net5.0\Hello5.runtimeconfig.dev.json
+D:\00工作笔记\csharp_note\hello\Hello5\Hello5\bin\Debug\net5.0\Hello5.dll
+D:\00工作笔记\csharp_note\hello\Hello5\Hello5\bin\Debug\net5.0\Hello5.pdb
+D:\00工作笔记\csharp_note\hello\Hello5\Hello5\obj\Debug\net5.0\Hello5.csproj.AssemblyReference.cache
+D:\00工作笔记\csharp_note\hello\Hello5\Hello5\obj\Debug\net5.0\Hello5.GeneratedMSBuildEditorConfig.editorconfig
+D:\00工作笔记\csharp_note\hello\Hello5\Hello5\obj\Debug\net5.0\Hello5.AssemblyInfoInputs.cache
+D:\00工作笔记\csharp_note\hello\Hello5\Hello5\obj\Debug\net5.0\Hello5.AssemblyInfo.cs
+D:\00工作笔记\csharp_note\hello\Hello5\Hello5\obj\Debug\net5.0\Hello5.csproj.CoreCompileInputs.cache
+D:\00工作笔记\csharp_note\hello\Hello5\Hello5\obj\Debug\net5.0\Hello5.dll
+D:\00工作笔记\csharp_note\hello\Hello5\Hello5\obj\Debug\net5.0\refint\Hello5.dll
+D:\00工作笔记\csharp_note\hello\Hello5\Hello5\obj\Debug\net5.0\Hello5.pdb
+D:\00工作笔记\csharp_note\hello\Hello5\Hello5\obj\Debug\net5.0\Hello5.genruntimeconfig.cache
+D:\00工作笔记\csharp_note\hello\Hello5\Hello5\obj\Debug\net5.0\ref\Hello5.dll

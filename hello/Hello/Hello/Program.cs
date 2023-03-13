@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace Hello5
+namespace Hello
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello .Net core!");
+            Console.WriteLine("Hello .Net Core!");
         }
     }
 }

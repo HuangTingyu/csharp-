@@ -4,39 +4,45 @@ namespace Hello
 {
     internal class Program
     {
+        public static int FindMax(int num1, int num2)
+        {
+            int result;
+            if(num1> num2)
+            {
+                result = num1;
+            } else
+            {
+                result = num2;
+            }
+
+            return result;
+        }
+
+        static void swap(int x, int y)
+        {
+            int temp;
+            temp = x;
+            x = y;
+            y = temp;
+        }
+
+        static void getValue(out int x)
+        {
+            x = 5;
+        }
+
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello .Net Core!");
-            //Console.Write("Test");
-            //Console.Write(" write!");
-            //Console.Read();
+            //Console.WriteLine("Hello .Net Core!");
+            //int output = FindMax(1, 99);
+            int a = 100;
+            int b = 500;
 
-            //int opt = Console.Read();
-            //Console.WriteLine(opt);
-            //Console.Read();
-
-            //string str = Console.ReadLine();
-            //Console.WriteLine(str);
-            //Console.Read();
-
-            //ConsoleKeyInfo a = Console.ReadKey();
-            //Console.WriteLine(a.Key);
-            //Console.Clear();
-            //Console.Read();
-            //Console.WriteLine("My name is {0}.I am {1} years old", "hty", 18);
-            string name = "hty";
-            int age = 18;
-            //string message = "My name is {0}. I am {1} years old.";
-            //string output = string.Format(message, name, age);
-            //Console.WriteLine(output);
-            //string message = $"My name is {name}. I am {age} years old.";
-            //Console.WriteLine(message);
-            string str = @"test next line";
-
-
-            //string hello = "hello";
-            //string str = hello.ToUpper();
-            Console.WriteLine(str);
+            //swap(a, b);
+            //Console.WriteLine($"a:{a},b:{b}");
+            getValue(out a);
+            Console.WriteLine($"a:{a}");
 
             Console.Read();
         }

@@ -189,7 +189,11 @@ static void Main(string[] args)
 
 新的调用private的方法
 
-注意，这里变量名必须**大写**！
+注意，这里变量名首字母必须**大写**！
+
+参考文档——https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/properties（搜索类、结构和记录中的属性）
+
+
 
 ```c#
 public class Point

@@ -4,76 +4,9 @@ namespace Hello
 {
     internal class Program
     {
-        public class Point
-        {
-            private int x;
-            private int y;
-            public string[] gamma = new string[]
-        {
-            "Test", // 0  ^3
-            "csharp",// 1 ^2
-            "Array" // 2 ^1
-        };
+        
 
-            public string this[int index]
-            {
-                get
-                {
-                    return gamma[index];
-                }
-                set
-                {
-                    gamma[index] = value;
-                }
-            }
-
-            public Point(int x, int y)
-            {
-                this.x = x;
-                this.y = y;
-            }
-
-            public int X
-            {
-
-                get { return x; }
-                set {
-                    if (value < 0)
-                    {
-                        throw new Exception("value应大于0");
-                    }
-                    this.x = value;
-                }
-
-            }
-             
-
-            public void SetY(int value)
-            {
-                if (value < 0)
-                {
-                    throw new Exception("value应大于0");
-                }
-                this.y = value;
-            }
-
-            public int GetY()
-            {
-                return y;
-            }
-
-            public void DrawPoint()
-            {
-                Console.WriteLine($"坐标点x:{x}, y:{y}");
-            }
-            
-
-            public double GetDistance(Point p)
-            {
-                return Math.Sqrt(Math.Pow(x - p.x, 2) + Math.Pow(y - p.y, 2));
-            }
-            
-        }
+        
 
         static string[] words = new string[]
         {
@@ -86,9 +19,11 @@ namespace Hello
         static void Main(string[] args)
         {
             Point a = new Point(0,0);
-            Console.WriteLine(a[0]);
-            a[0] = "change";
-            Console.WriteLine(a[0]);
+            //Console.WriteLine(a[0]);
+            //a[0] = "change";
+            //Console.WriteLine(a[0]);
+            a.Delta = 15;
+            a.PrintDelta();
 
 
             //Range p = 0..2;

@@ -231,3 +231,46 @@ int x = a.X;
 Console.WriteLine($"x_{x},y_{y}");
 ```
 
+
+
+### partial局部类
+
+局部类所有部分，必须放在相同命名空间下。
+
+加上partial关键字以后，可以把类里面的方法分开两部分写，但是每部分都要加partial
+
+```c#
+public partial class Point
+        {
+            public int Delta { get; set; }
+            public void PrintDelta() {
+                Console.WriteLine("测试partial");
+            }
+        }
+        
+public partial class Point
+        {
+            private int x;
+            private int y;
+            ......
+}
+```
+
+调用，就跟上面调用point中的方法一样。
+
+```c#
+static void Main(string[] args)
+        {
+            Point a = new Point(0,0);
+            a.Delta = 15;
+            a.PrintDelta();
+            }
+```
+
+
+
+### 生成class文件
+
+选择“类”
+
+<img src="..\image\generate_class.png" alt="generate_class" style="zoom:30%;" />

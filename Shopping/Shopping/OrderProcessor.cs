@@ -28,6 +28,7 @@ namespace Shopping
 
                 ShippingDate = DateTime.Today.AddDays(1)
             };
+            order.IsShipped = true;
             Console.WriteLine($"订单运费{order.Shipment.Cost}元完成，已发货");
             Console.WriteLine($"订单#{order.Id}完成，已发货");
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Shopping
 {
@@ -12,16 +13,33 @@ namespace Shopping
                 DatePlaced = DateTime.Now,
                 TotalPrice = 20f
             };
-            IShippingCalculator doubleEleven = new DoubleElevenShoppingCalculator();
-            IShippingCalculator common = new ShippingCalculator();
-            var orderProcessor = new OrderProcessor(common);
+            // 配置IOC
+            ServiceCollection services = new ServiceCollection();
+            // singleton, 单例模式
+            // scoped，作用域模式
+            // transient，瞬时模式
+            services.AddScoped<IOrderProcessor, OrderProcessor>();
+            //services.AddSingleton<IOrderProcessor, OrderProcessor>();
+            //services.AddTransient<IOrderProcessor, OrderProcessor>();
+            services.AddScoped<IShippingCalculator, DoubleElevenShoppingCalculator>();
 
-            if (DateTime.Now == new DateTime(2023, 11, 11))
-            {
-                orderProcessor = new OrderProcessor(doubleEleven);
-            }
+            // 从IOC提取服务
+            IServiceProvider serviceProvider = services.BuildServiceProvider();
+            var orderProcess = serviceProvider.GetService<IOrderProcessor>();
 
-            orderProcessor.Process(order);
+            orderProcess.Process(order);
+            Console.Read();
+
+            //IShippingCalculator doubleEleven = new DoubleElevenShoppingCalculator();
+            //IShippingCalculator common = new ShippingCalculator();
+            //var orderProcessor = new OrderProcessor(common);
+
+            //if (DateTime.Now == new DateTime(2023, 11, 11))
+            //{
+            //    orderProcessor = new OrderProcessor(doubleEleven);
+            //}
+
+            //orderProcessor.Process(order);
         }
     }
 }

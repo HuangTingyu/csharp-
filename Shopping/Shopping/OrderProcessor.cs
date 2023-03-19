@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace Shopping
 {
-    public class OrderProcessor
+    public class OrderProcessor: IOrderProcessor
     {
         private readonly IShippingCalculator _shippingCalculator;
 
         public OrderProcessor(IShippingCalculator shippingCalculator)
         {
+            Console.WriteLine("OrderProcessor 被创建了");
             _shippingCalculator = shippingCalculator;
         }
 

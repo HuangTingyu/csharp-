@@ -19,7 +19,7 @@ namespace Shopping.UnitTests
                 TotalPrice = 100f
             };
             orderProcessor.Process(order);
-            Assert.AreEqual(order.Shipment.Cost, 5);
+            Assert.AreEqual(5, order.Shipment.Cost);
             Assert.IsTrue(order.IsShipped);
         }
 

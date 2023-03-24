@@ -37,6 +37,19 @@ namespace StructsInit
         }
     }
 
+    public class Utility<T> where T : IComparable
+    {
+        public int FindMax(int a, int b)
+        {
+            return a > b ? a : b;
+        }
+
+        public T FindMax(T a, T b) 
+        {
+            return a.CompareTo(b) > 0 ? a : b;
+        }
+    }
+
 
     internal class Program
     {
@@ -54,6 +67,15 @@ namespace StructsInit
                 Price = 100
             });
 
+            var database = new Dictionary<string, Product>();
+            database.Add("123", new Product() { Id = 2, Price = 100 });
+            database.Add("234", new Product() { Id = 3, Price = 200 });
+            database.Add("456", new Product() { Id = 4, Price = 300 });
+
+            Product product = database.Get("123");
+            Console.WriteLine(product.Price);
+
+            //System.Collections.Generic.Dictionary
 
             Console.Read();
             //Game game;

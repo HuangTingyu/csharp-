@@ -72,6 +72,8 @@ game.releaseDate = DateTime.Today;
 
 ### 泛型
 
+`System.Collections.Generic`
+
 （1）number类型的List
 
 ```c#
@@ -153,5 +155,49 @@ var productlist = new GenericList<Product>();
                 Id = 1,
                 Price = 100
             });
+```
+
+
+
+### 字典
+
+`System.Collections.Generic.Dictionary`
+
+
+
+#### 类型限制
+
+写法1
+
+```c#
+public class Utility
+    {
+        public int FindMax(int a, int b)
+        {
+            return a > b ? a : b;
+        }
+
+        public T FindMax<T>(T a, T b) where T : IComparable
+        {
+            return a.CompareTo(b) > 0 ? a : b;
+        }
+    }
+```
+
+写法2
+
+```c#
+public class Utility<T> where T : IComparable
+    {
+        public int FindMax(int a, int b)
+        {
+            return a > b ? a : b;
+        }
+
+        public T FindMax(T a, T b) 
+        {
+            return a.CompareTo(b) > 0 ? a : b;
+        }
+    }
 ```
 

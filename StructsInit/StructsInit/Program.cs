@@ -63,6 +63,15 @@ namespace StructsInit
 
     internal class Program
     {
+
+        public class Excel
+        {
+            public string Table { get; set; }
+            public void ShowTable()
+            {
+                Console.WriteLine("打印excel表格");
+            }
+        }
         static void Main(string[] args)
         {
             //var numberlist = new List();
@@ -105,9 +114,9 @@ namespace StructsInit
             //Console.WriteLine("Hello World!");
             //Nullable<DateTime> date = null;
             //DateTime? date = null;
-            DateTime? date = new DateTime(2023, 5, 5);
-            DateTime date2 = date.GetValueOrDefault();
-            DateTime? date3 = date2;
+            //DateTime? date = new DateTime(2023, 5, 5);
+            //DateTime date2 = date.GetValueOrDefault();
+            //DateTime? date3 = date2;
             //if (date3.HasValue)
             //{
             //    Console.WriteLine(date3.GetValueOrDefault());
@@ -115,13 +124,19 @@ namespace StructsInit
             //{
             //    Console.WriteLine(DateTime.Today);
             //}
-            var result = date3 ?? DateTime.Today;
-            Console.WriteLine(result);
+            //var result = date3 ?? DateTime.Today;
+            //Console.WriteLine(result);
 
             //Console.WriteLine(date.GetValueOrDefault());
             //Console.WriteLine(date.HasValue);
 
             //Console.WriteLine(date.value);
+            //dynamic excel = new Excel();
+            // 反射写法
+            dynamic excel = new Excel();
+            excel.ShowTable();
+            //var methodInfo = excel.GetType().GetMethod("ShowTable");
+            //methodInfo.Invoke(excel, null);
 
             Console.Read();
 

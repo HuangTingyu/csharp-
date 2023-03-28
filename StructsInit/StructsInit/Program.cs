@@ -87,16 +87,15 @@ namespace StructsInit
 
             //System.Collections.Generic.Dictionary
 
-            Nullable<int> number = new Nullable<int>();
-            var numberDefault = number.GetValueOrDefault();
-            Console.WriteLine(number.HasValue);
-            Console.WriteLine(numberDefault);
+            //Nullable<int> number = new Nullable<int>();
+            //var numberDefault = number.GetValueOrDefault();
+            //Console.WriteLine(number.HasValue);
+            //Console.WriteLine(numberDefault);
 
-            var number2 = new Nullable<int>(5);
-            var number2Default = number2.GetValueOrDefault();
-            Console.WriteLine(number2Default);
+            //var number2 = new Nullable<int>(5);
+            //var number2Default = number2.GetValueOrDefault();
+            //Console.WriteLine(number2Default);
 
-            Console.Read();
             //Game game;
             //game.name = "pokemon";
             //game.developer = "Jeremy";
@@ -104,6 +103,29 @@ namespace StructsInit
 
             //game.GetInfo();
             //Console.WriteLine("Hello World!");
+            //Nullable<DateTime> date = null;
+            //DateTime? date = null;
+            DateTime? date = new DateTime(2023, 5, 5);
+            DateTime date2 = date.GetValueOrDefault();
+            DateTime? date3 = date2;
+            //if (date3.HasValue)
+            //{
+            //    Console.WriteLine(date3.GetValueOrDefault());
+            //} else
+            //{
+            //    Console.WriteLine(DateTime.Today);
+            //}
+            var result = date3 ?? DateTime.Today;
+            Console.WriteLine(result);
+
+            //Console.WriteLine(date.GetValueOrDefault());
+            //Console.WriteLine(date.HasValue);
+
+            //Console.WriteLine(date.value);
+
+            Console.Read();
+
+
         }
     }
 }

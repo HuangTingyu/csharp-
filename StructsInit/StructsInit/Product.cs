@@ -1,5 +1,7 @@
 ﻿namespace HelloWord
 {
+
+
     public class Product
     {
         public int Id { get; set; }

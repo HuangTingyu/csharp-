@@ -159,13 +159,24 @@ var productlist = new GenericList<Product>();
 
 
 
-### 字典
+### 泛型经典类型：字典
 
 `System.Collections.Generic.Dictionary`
 
 
 
-#### 类型限制
+### 泛型类型限制
+
+泛型可以被限制为，接口，class，struct或者new()
+
+```c#
+// where T : IComparable
+// where T : class(product类, 或者product派生类book)
+// where T : struct
+// where T : new () 表示该泛型类必须包含构造方法
+```
+
+
 
 写法1
 
@@ -199,5 +210,71 @@ public class Utility<T> where T : IComparable
             return a.CompareTo(b) > 0 ? a : b;
         }
     }
+```
+
+带构造函数的写法 `new()`
+
+```c#
+public class Utility<T> where T : IComparable, new()
+    {
+        public void DoSomething()
+        {
+            var obj = new T();
+        }
+}
+```
+
+
+
+限制参数类型为struct， struct类型的变量不能为空
+
+如果有要创建struct类型的变量，又要变量可以赋值为空，可以使用以下的class
+
+```c#
+public class Nullable<T> where T:struct
+    {
+        private object _value;
+
+        public Nullable(){} // 加了这一行，可以不用传value
+
+        public Nullable(T value)
+        {
+            _value = value;
+        }
+        //判断value是否为空
+        public bool HasValue
+        {
+            get {
+                return _value != null;
+            }
+        }
+
+        // 获取T默认值
+        public T GetValueOrDefault()
+        {
+            if (HasValue)
+            {
+                // 如果T类型的_value有值，那返回_value
+                return (T)_value;
+            }
+            // 否则返回T类型的默认值
+            return default(T);
+        }
+    }
+```
+
+使用类`Nullable`
+
+```c#
+// 不传参数
+Nullable<int> number = new Nullable<int>();
+var numberDefault = number.GetValueOrDefault();
+Console.WriteLine(number.HasValue);
+Console.WriteLine(numberDefault);
+
+// 传参数
+var number2 = new Nullable<int>(5);
+var number2Default = number2.GetValueOrDefault();
+Console.WriteLine(number2Default);
 ```
 

@@ -46,9 +46,15 @@ namespace Computer.SDK
 
 ### 新建类`FlashDisk`
 
-新建类`FlashDisk` ，引入项目依赖，选择`Computer.SDK`
+右键“解决方案”，点击“新建项目”，点击“类库”，新建类`FlashDisk` 
+
+![add_class](..\image\Reflection\add_class.png)
+
+引入项目依赖，选择`Computer.SDK`
 
 ![add_intro](..\image\Reflection\add_intro.png)
+
+右键`FlashDisk` ，添加类`FlashDisk`
 
 ```c#
 public class FlashDisk : Computer.SDK.IUSB
@@ -70,7 +76,47 @@ public class FlashDisk : Computer.SDK.IUSB
     }
 ```
 
+生成`FlashDisk` `dll`文件的步骤同上。
 
 
 
+### 新建类`SSD`
+
+步骤同上
+
+`SSD.cs`
+
+```c#
+public class SSD : Computer.SDK.IUSB
+    {
+        public void GetInfo()
+        {
+            Console.WriteLine("1TB固态硬盘");
+        }
+
+        public void Read()
+        {
+            Console.WriteLine("读取固态硬盘");
+        }
+
+        public void Write()
+        {
+            Console.WriteLine("写入固态硬盘");
+        }
+    }
+```
+
+生成`SSD` `dll`文件的步骤同上。
+
+
+
+### `dll` 文件的应用
+
+`ReflectionInit\FlashDisk\bin\Debug\net5.0` 找到 `FlashDisk.dll`
+
+`ReflectionInit\SSD\bin\Debug\net5.0` 找到 `SSD.dll`
+
+然后在`ReflectionInit\ReflectionInit\bin\Debug\net5.0` 新建文件夹 `USB` 
+
+将这两个`dll`文件粘贴到刚刚新建的`USB` 目录下
 

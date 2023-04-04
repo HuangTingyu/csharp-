@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HelloWord
+namespace StructsInit
 {
     public class Dictionary<TKey, TValue>
     {

@@ -1,5 +1,5 @@
-﻿using HelloWord;
-using System;
+﻿using System;
+using System.Reflection;
 
 namespace StructsInit
 {
@@ -133,10 +133,16 @@ namespace StructsInit
             //Console.WriteLine(date.value);
             //dynamic excel = new Excel();
             // 反射写法
-            dynamic excel = new Excel();
-            excel.ShowTable();
+            //dynamic excel = new Excel();
+            //excel.ShowTable();
             //var methodInfo = excel.GetType().GetMethod("ShowTable");
             //methodInfo.Invoke(excel, null);
+            string classLocation = "StructsInit.List, StructsInit";
+            Type objType = Type.GetType(classLocation); //获得类型
+            object obj = Activator.CreateInstance(objType); // 创建实例
+            MethodInfo add = objType.GetMethod("Add"); // 获得类中的方法
+            add.Invoke(obj, null); // 调用方法,因为add方法不传参数，所以第二个参数null
+
 
             Console.Read();
 

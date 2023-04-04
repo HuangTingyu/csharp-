@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace HelloWord
+namespace StructsInit
 {
     public class List
     {
-        public void Add(int number)
+        public void Add()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("test reflection");
         }
 
         public int this[int index]

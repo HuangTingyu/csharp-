@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReflectionInit", "ReflectionInit\ReflectionInit.csproj", "{428F25B8-7485-497E-B851-4DBCA3C94076}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReflectionInit", "ReflectionInit\ReflectionInit.csproj", "{428F25B8-7485-497E-B851-4DBCA3C94076}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Computer.SDK", "Computer.SDK\Computer.SDK.csproj", "{4755F1CD-B594-4B06-BADC-EC2FED8775CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashDisk", "FlashDisk\FlashDisk.csproj", "{64EB37E7-DFCC-4F9E-8936-37B7BF0B8D7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{428F25B8-7485-497E-B851-4DBCA3C94076}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{428F25B8-7485-497E-B851-4DBCA3C94076}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{428F25B8-7485-497E-B851-4DBCA3C94076}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4755F1CD-B594-4B06-BADC-EC2FED8775CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4755F1CD-B594-4B06-BADC-EC2FED8775CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4755F1CD-B594-4B06-BADC-EC2FED8775CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4755F1CD-B594-4B06-BADC-EC2FED8775CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64EB37E7-DFCC-4F9E-8936-37B7BF0B8D7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64EB37E7-DFCC-4F9E-8936-37B7BF0B8D7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64EB37E7-DFCC-4F9E-8936-37B7BF0B8D7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64EB37E7-DFCC-4F9E-8936-37B7BF0B8D7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

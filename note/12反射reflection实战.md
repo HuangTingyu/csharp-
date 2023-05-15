@@ -1,3 +1,37 @@
+### 反射的好处
+
+一句话总结，可以通过 `Type.GetType` 动态获得类定义
+
+`List.cs`
+
+```c#
+namespace ReflectionTest
+{
+        public class List
+        {
+            public void Add()
+            {
+                Console.WriteLine("ddddd");
+            }
+        }
+}
+```
+
+调用
+
+```c#
+static void Main(string[] args)
+        {
+    string classLocation = "ReflectionTest.List, ReflectionTest";
+    Type objType = Type.GetType(classLocation);
+    object obj = Activator.CreateInstance(objType);
+    MethodInfo add = objType.GetMethod("Add");
+    add.Invoke(obj, null);
+}
+```
+
+
+
 ### reflection实战
 
 新建类 `Computer.SDK`
@@ -119,4 +153,45 @@ public class SSD : Computer.SDK.IUSB
 然后在`ReflectionInit\ReflectionInit\bin\Debug\net5.0` 新建文件夹 `USB` 
 
 将这两个`dll`文件粘贴到刚刚新建的`USB` 目录下
+
+
+
+### 获取文件
+
+```c#
+static void Main(string[] args)
+        {
+            string USBInterface = Path.Combine(Environment.CurrentDirectory,"USB"); //获得USB文件夹路径
+            Console.WriteLine(USBInterface);
+            var dllFiles = Directory.GetFiles(USBInterface);
+
+            var deviceList = new List<IUSB>();
+            // 读取dllFiles中的文件
+            foreach (var dll in dllFiles)
+            {
+                var assembly = AssemblyLoadContext.Default.LoadFromAssemblyPath(dll); // 获取dll文件
+                var typeList = assembly.GetTypes(); //获取dll文件类型列表
+                // 检查类型是否正确
+                foreach (var type in typeList)
+                {
+                    var interfaceList = type.GetInterfaces(); //获取dll里各种类的接口
+                    foreach (var i in interfaceList)
+                    {
+                        if (i.Name == "IUSB")
+                        {
+                            var usb = (IUSB)Activator.CreateInstance(type);
+                            deviceList.Add(usb);
+                        }
+                    }
+                }
+            }
+
+            foreach (var usb in deviceList)
+            {
+                usb.GetInfo();
+                usb.Read();
+                usb.Write();
+            }
+        }
+```
 
